@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+        let nomes = [
+        'joao,marcos,michael',
+        'jose,maria'
+        ]
+
+        console.log(nomes)
+
+        let nomesMap = nomes.map( i =>{
+            return i.split(',')
+        }) //map percorre cada elemento do array
+
+        console.log(nomesMap)
+
+
+        let nomesFlatMap = nomes.flatMap( i =>{
+            return i.split(',')
+        }) //map percorre cada elemento do array
+
+        console.log(nomesFlatMap)
+    </script>
+</body>
+</html>

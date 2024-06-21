@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // pad Start -> preenchimento á esquerda
+        let codigo = '1000'
+        codigo = codigo.padStart(6,'0') // dentro dessa função vem os valores de 1º quntidade de caracteres e 2º Qual caracter que será repetido
+        
+        console.log(codigo)
+
+        let codigo2 = '3000'
+        // expectativa 3000#########
+        codigo2 = codigo2.padEnd(14, '#')
+        console.log(codigo2)
+
+    </script>
+    
+</body>
+</html>

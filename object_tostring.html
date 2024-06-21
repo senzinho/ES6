@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        class Car {
+            constructor(brand, model, year){
+                this.brand = brand,
+                this.model = model,
+                this.year = year
+            }
+
+            toString() {
+                return `Car of brand ${this.brand}, Modelo - ${this.model} and year ${this.year}` //sobrescrevemos o methodo toString é bem especifico , só se necessario
+            }
+        }
+
+        // object Type
+
+        // toString é herdado para todos os objetos do JS
+        let carro = new Car('Fusca', ' Fafá', 1980)
+
+        console.log(carro.toString())
+    </script>
+    
+</body>
+</html>

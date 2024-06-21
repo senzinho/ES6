@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr = [10, 20, 30, 40]
+
+        function teste([a, b, ,c, d]){
+            console.log(a, b, c, d)
+        }
+
+        //teste(arr[0], arr[1])
+        //teste(arr)
+
+        // objeto
+        let obj = {
+            a: 10,
+            b: 20,
+            c: 30,
+            d: 40
+        }
+
+        function teste2({c, d: x, t = 0}){ //renomeando o atrr
+            console.log(c, x, t)
+        }
+
+        //teste2(obj.a, obj.c)
+        teste2(obj)
+       
+    </script>
+</body>
+</html>

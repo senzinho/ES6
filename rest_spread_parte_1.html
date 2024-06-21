@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="teste"></div>
+
+    <script>
+
+        //context spread ->  utilizado para expandir 
+
+        //string
+
+        let tituloArtigo = 'como utiliiazr o operador rest/spread'
+        console.log(tituloArtigo)
+        console.log(...tituloArtigo)
+        console.log([...tituloArtigo]) ///array
+        console.log({...tituloArtigo}) // object
+
+        //array
+
+        let listaCurso1 = ['NodeJS e MongoDb', 'Angular']
+        let listaCurso2 = ['Solid', 'laravel']
+        let listaCompletaCursos = [
+            'web Completo',
+            'Banco de Dados',
+            ...listaCurso1,
+            ...listaCurso2
+        ]
+
+        console.log(listaCompletaCursos)
+
+
+        //objetos
+
+        let pessoa = {nome: 'Pedro', idade: 41}
+        let cadastroCompleto = {endereco: 'Rua abc', ...pessoa}
+
+        console.log(cadastroCompleto)
+    </script>
+    
+</body>
+</html>

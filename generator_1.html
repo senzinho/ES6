@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        // para transformar essa função em uma função generator você precisa colocar após a function* um (*)
+        function* testGenerator(){
+            yield 'Teste 1 '
+            yield 'Teste 2'
+            yield 'Teste 3'
+            yield 'São Carlo Acutis, Rogai por nós!'
+
+            return ' Teste 5'
+        }
+
+        let meuGenerator = testGenerator() // objeto iterator
+
+        //console.log(meuGenerator)
+
+        console.log(meuGenerator.next())
+        console.log('---------------')
+        console.log(meuGenerator.next())
+        console.log('---------------')
+        console.log(meuGenerator.next())
+        console.log('---------------')
+        console.log(meuGenerator.next())
+        console.log('---------------')
+        console.log(meuGenerator.next())
+
+    </script>
+    
+</body>
+</html>

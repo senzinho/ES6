@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let objeto = {
+            nome: 'Heliusen',
+            profissional: {
+                profissão: 'T.I',
+                site: 'tal.com'
+            },
+
+            hobbies: [
+            {id: 1, hobie: 'Tocar violão'},
+            {id: 2, hobie: 'Ir a missa'},
+            
+            
+            
+            ],
+
+            pais: 'US'
+            
+        }
+
+        // descritores de propriedades
+       // console.log(Object.getOwnPropertyDescriptors(objeto))
+
+        // Descritorwritable: Quando definido como false , ele indica que não poderá editar o value.
+
+        /*Object.defineProperty(objeto, 'nome', {
+            value: 'Heliusen José',
+            writable: false
+        }) 
+
+        console.log(Object.getOwnPropertyDescriptors(objeto))
+
+
+        // CONVERTE PARA ARRAYS E GANHA INDICES SEQUENCIAIS
+
+
+        */
+
+        /*
+        for(let propriedade in objeto){
+            console.log(propriedade, objeto[propriedade])
+        }
+
+        Object.defineProperty(objeto, 'hobbies', {
+            enumerable: false
+        })
+
+        Object.defineProperty(objeto, 'profissional', {
+            enumerable: false
+        }) */
+
+        console.log(Object.getOwnPropertyDescriptors(objeto))
+
+        Object.defineProperty(objeto, 'pais',{
+            configurable: false
+        })
+
+        console.log(Object.getOwnPropertyDescriptors(objeto)) // impossivel deletar esta propriedade
+    // 4 valores metadados 
+    //configurable / enumerable / writable
+    </script>
+</body>
+</html>

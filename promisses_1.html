@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        // requisição http
+        let resposta = {}
+
+        let promessa = new Promise((resolve, reject) =>{
+            try{ // tenta
+
+                //throw new Error('0 erro /:')
+                setTimeout(()=> {
+                    resposta = { dados: {msg: 'recuperamos os dados com sucesso'}}
+                    resolve('SUCESS')
+
+               }, 3000)
+
+
+            }catch(e){ // se tiver erro captura o erro
+               
+               setTimeout(() => {
+                    reject(e)
+               }, 3000) 
+            }
+        })
+
+        console.log(promessa)
+
+        setTimeout(() => {
+            console.log(promessa)
+            console.log(resposta)
+
+        },5000)
+
+    </script>
+    
+</body>
+</html>

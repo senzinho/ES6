@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div id="teste"></div>
+
+    <script>
+        let produto = {
+            descricao: 'notbook',
+            preco: 2500,
+            detalhes: {
+                fabricante: 'DELL',
+                modelo: 'Latitude'
+            }
+        }
+
+        //token (arrays) => []
+        // token (objetos) => {}
+
+
+        //let { descricao, preco } = produto
+        //console.log(descricao, preco)
+
+        //nomear as variáveis com outros nomes
+        //let {descricao: d , preco: p, desconto = 5} = produto
+        //console.log(d, p, desconto)
+
+        //extarir atributos do objeto interno
+
+        //let {descricao, detalhes: {fabricante, modelo} } = produto
+        //console.log(descricao, fabricante,modelo)
+
+        let {descricao, detalhes: {fabricante: f, modelo: m = 'Não informado'} } = produto
+        console.log(descricao,f,m)
+
+    </script>
+    
+</body>
+</html>

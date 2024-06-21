@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Pessoa {
+
+            #humor = null //atributos e metodos privados estão sempre visiveis somente dentro da sua própria classe
+
+            #mensagens = [
+                'Seja feliz',
+                'Não estou para conversa hoje!'
+            
+            ]
+            // para fazer um atrr privado precisa ser fora do contructor
+            constructor(name){
+                this.name = name
+                this.#mudarHumor()
+            }
+
+            dizerOi(){
+                return `Hello, my name is ${this.name}!`
+            }
+
+            getHumor(){
+                return this.#humor
+            }
+
+            // para definir um methodo privado na classe utilizaremos também o # à esquerda
+
+            #mudarHumor(){
+                // 0 e 1
+
+                this.#humor = Math.floor(Math.random() * 2)
+            }
+
+            getMensagem(){
+                return this.#mensagens[this.#humor]
+            }
+        }
+
+        // atrr public 
+
+        let p = new Pessoa('Heliusen')
+        console.log(p.dizerOi())
+
+        console.log(p.getMensagem())
+    </script>
+</body>
+</html>

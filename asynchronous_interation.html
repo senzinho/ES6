@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script>
+            let processos = [1,2,3,4,5]
+
+            let interacaoAssincrona = async () => {
+                for(let processo of processos ){
+                    //prcessamento assincronos
+
+                    await new Promise((resolve, reject) => {
+                        setTimeout(() =>{
+                            console.log('processamento assincronos')
+                            resolve()
+                        }, 2000)
+                    })
+                    console.log(processo)
+                }
+            }
+
+            interacaoAssincrona()
+        </script>
+</body>
+</html>

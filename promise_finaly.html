@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let p = new Promise((resolve, reject) => {
+    if(true){
+        reject('Rejeitada')
+    }
+
+    resolve('Resolvido')
+})
+
+.then((resultado)=> console.log(resultado))
+.catch((rejeitado) => console.log(rejeitado))
+.finally(()=>{
+    console.log('Fluxo finally, fluxo se rejeitado ou resolvido')
+})
+
+.then(() => console.log('then após o finally'))
+.then(() => console.log('then após o then do finally'))
+    </script>
+</body>
+</html>

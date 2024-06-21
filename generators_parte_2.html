@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        function* conversar(){
+             // primeiro bloco
+            let opcao = yield 'tudo bem ?'
+
+            // segundo bloco
+            if(opcao == 'sim'){
+                yield 'Ótimo fico Feliz!'
+
+                opcao = yield 'Quer uma piada ? y/n'
+
+                if(opcao == 'sim'){
+                    fetch('dados/piadas.json')
+                        .then(resposta => resposta.json())
+                        .then(piadas => {
+                            let idx = Math.floor((Math.random() * 10))
+                            let piada = piadas[idx]
+
+                            console.log(piada.piada)
+
+
+                            setTimeout(() => {
+                                console.log(piada.resposta)
+
+                            }, 4000)
+                        })
+                        
+                        yield 'Digite 1 para compras , 2 para conversar com um de nossos atendentes'
+
+                }else{
+                    yield 'Digite 1 para compras , 2 para conversar com um de nossos atendentes'
+
+                }
+                
+            }else{
+                yield 'Respire e reze que irá ficar tudo bem!'
+
+                yield 'Digite 1 para compras , 2 para conversar com um de nossos atendentes'
+            }
+                
+            return 'Atendimento finalizado!'
+            
+        }
+
+        let conversa = conversar()// objeto interator
+
+        function acao(){
+            let resposta = document.getElementById('resposta').value
+            interacao = conversa.next(resposta)
+            console.log(interacao)
+
+            if(interacao.done){
+                document.getElementById('teste').style.display = 'none'
+            }
+
+        }
+
+    </script>
+
+    <div id="teste">
+        <button type="button" onclick="acao()">avancar</button>
+        Resposta: <input type="text" id="resposta">
+    </div>
+    
+</body>
+</html>

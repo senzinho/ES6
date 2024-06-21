@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let promessa = new Promise((resolve, reject) => {
+    
+            // para recuperar uma relação de usuários 
+
+            setTimeout(() => {
+
+
+                    // requisição foi realizada de algum modo
+                let resposta_da_requisição = {}
+
+                // vamos fingir que deu um erro 
+                if(true){
+
+                    resposta_da_requisição = {
+                        codigo: 1050, 
+                        error: 'falha de autorização'
+                    }
+
+                    reject(resposta_da_requisição)
+                }
+
+                resposta_da_requisição = {
+                    0: {id: 1, nome: 'joao'},
+                    1: {id: 1, nome: 'maria'},
+                }
+
+                resolve(resposta_da_requisição)
+            }, 4000)
+        }).then(dados => {
+            console.log('operação sequencial: ', dados)
+        }).catch(erro => {
+            console.log('operação sequencial catch:', erro)
+
+            return 'Parametro capturado e enviado para o proximo then!'
+        }).then(param => {
+            console.log('essé é um then após o catch mostrando que se pode utilizar o then após o catch', param)
+        })
+    </script>
+</body>
+</html>
